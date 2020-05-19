@@ -1,26 +1,58 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import axios from "axios";
+import Routes from "./routers/Routes"
 
-function App() {
+
+function App (){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes />
     </div>
-  );
+  )
 }
+
+
+// class App extends React.Component{
+//   state = {
+//     todos:[]
+//   }
+
+//   getTodos = async () => {
+//     const res = await fetch ('https://jsonplaceholder.typicode.com/todos') 
+//     const data = await res.json()
+//     console.log(data)
+//     this.setState({todos: data})
+//   }
+  
+//   getWithAxios = async () => {
+//     const resp = await axios.get('https://jsonplaceholder.typicode.com/todos')
+//     this.setState({todos:resp.data})
+//     console.log(resp)
+//   }
+  
+//   render(){
+//     const list = this.state.todos.map(list => 
+//       <div key={list.id}>
+//         <p>{list.title}</p>
+//       </div>
+//       )
+    
+    
+    
+//     return(
+//       <div className="App">
+//         <h1>Todo Aps</h1>
+//         <button onClick={this.getTodos}>Get Data</button>
+//         <button onClick={this.getWithAxios}>Get Data with axios</button>
+//           {list}    
+//       </div>
+//     )
+//   }
+
+// }
+
+
+
 
 export default App;
